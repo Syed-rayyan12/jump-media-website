@@ -10,6 +10,10 @@ const heroHeadings = [
   { line1: 'Build Your', line2: 'Digital', line3: 'Presence.' },
 ]
 
+const heroImages = {
+  on: '/Image (7).png',
+  off: '/Image (8).png',
+}
 
 const brandsList = [
   'My Nursery',
@@ -320,8 +324,9 @@ export default function Page() {
             {/* Background Hero Image Container - Positioned to sit under the right portion of the heading */}
             <div className="hero-overlap-image">
               <img
+                key={isToggleOn ? heroImages.on : heroImages.off}
                 className="hero-overlap-photo"
-                src="/Image (7).png"
+                src={isToggleOn ? heroImages.on : heroImages.off}
                 alt="Jump Media professional team"
               />
             </div>
@@ -331,7 +336,7 @@ export default function Page() {
               {/* Main Heading Layer: Spans wide across so 'Ways' and 'To Be Found' overlay the image */}
               <div className="hero-main-heading">
                 <div className="hero-heading-row1">
-                  <span className="hero-heading-word">Eleven</span>
+                  <span className="hero-heading-word hero-heading-eleven">Eleven</span>
                   <span className="hero-toggle-wrap">
                     <button
                       type="button"

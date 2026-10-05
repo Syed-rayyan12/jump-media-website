@@ -636,6 +636,35 @@ footer {
   text-shadow: 0 2px 14px rgba(4, 20, 24, 0.3);
 }
 
+.hero-heading-eleven {
+  cursor: default;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-heading-eleven:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-shadow:
+    0 0 18px rgba(20, 207, 207, 0.62),
+    0 8px 24px rgba(20, 154, 148, 0.38);
+}
+
+.hero-overlap-photo {
+  animation: heroImageSwap 360ms ease both;
+}
+
+@keyframes heroImageSwap {
+  from {
+    opacity: 0.82;
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Toggle button & wrapper */
 .hero-toggle-wrap {
   display: inline-flex;
@@ -664,6 +693,12 @@ footer {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+}
+
+.hero-toggle-btn:hover {
+  border-color: #2bfbfb;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(20, 207, 207, 0.48);
 }
 
 .hero-toggle-btn:focus-visible {
@@ -1456,6 +1491,9 @@ footer {
   animation: ribbon-scroll 28s linear infinite;
   white-space: nowrap;
   flex-shrink: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .ribbon-inner-reverse {
@@ -1464,6 +1502,9 @@ footer {
   animation: ribbon-scroll-reverse 30s linear infinite;
   white-space: nowrap;
   flex-shrink: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .ribbon-inner span,
@@ -1476,21 +1517,21 @@ footer {
 
 @keyframes ribbon-scroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-50% - 27.5px), 0, 0);
   }
 }
 
 @keyframes ribbon-scroll-reverse {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-50% - 27.5px), 0, 0);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -2140,6 +2181,8 @@ footer {
   width: max-content;
   animation: testimonial-slide-right 40s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .testimonials-track-row2 {
@@ -2148,6 +2191,8 @@ footer {
   width: max-content;
   animation: testimonial-slide-left 40s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .testimonials-track-row1:hover,
@@ -2157,21 +2202,21 @@ footer {
 
 @keyframes testimonial-slide-right {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-50% - 10px), 0, 0);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes testimonial-slide-left {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-50% - 10px), 0, 0);
   }
 }
 
