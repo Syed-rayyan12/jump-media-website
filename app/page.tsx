@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import PlatformsSection from '@/components/sections/PlatformsSection'
 import { ArrowUpRight, Check, ChevronDown, Mail, MapPin, Menu, Phone, Star, X } from 'lucide-react'
 
 const heroHeadings = [
@@ -29,64 +30,6 @@ const brandsList = [
   'My Architect',
 ]
 
-const platformList = [
-  {
-    num: '01',
-    name: 'MY NURSERY',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Live',
-    image: '/Image%20(9).png',
-  },
-  {
-    num: '02',
-    name: 'MY VET',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Live',
-    image: '/Image%20(10).png',
-  },
-  {
-    num: '03',
-    name: 'MY CARER',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(11).png',
-  },
-  {
-    num: '04',
-    name: 'MY TENANT',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(12).png',
-  },
-  {
-    num: '05',
-    name: 'MY LANDLORD',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(13).png',
-  },
-  {
-    num: '06',
-    name: 'MY SOLICITOR',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(14).png',
-  },
-  {
-    num: '07',
-    name: 'MY ACCOUNTANT',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(15).png',
-  },
-  {
-    num: '08',
-    name: 'MY IMPORTER',
-    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    status: 'Coming Soon',
-    image: '/Image%20(16).png',
-  },
-]
 const values = ['DISCOVER', 'CONNECT', 'GROW', 'FIND', 'TRUST', 'EXPLORE']
 
 function Logo({ className = '' }: { className?: string }) {
@@ -516,59 +459,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="platforms" id="platforms">
-        <img
-          src="/Vector.png"
-          alt=""
-          aria-hidden="true"
-          className="platforms-vector platforms-vector-tl"
-        />
-        <img
-          src="/Vector (1).png"
-          alt=""
-          aria-hidden="true"
-          className="platforms-vector platforms-vector-br"
-        />
-        <div className="container platforms-container">
-          <div className="section-heading">
-            <div>
-              <p className="platforms-label">Our Platforms</p>
-              <h2>
-                Eleven Platforms. Eleven<br />
-                Industries. One Media Group.
-              </h2>
-            </div>
-            <div className="section-heading-right">
-              <p>
-                Explore our specialist platforms, each built to connect people with the businesses and professionals they need.
-              </p>
-              <PillButton>Our Platforms</PillButton>
-            </div>
-          </div>
-          <div className="platform-grid">
-            {platformList.map((item) => (
-              <article className="platform-card" key={item.num}>
-                <div className="card-top">
-                  <div className="card-header-left">
-                    <span className="number-circle">{item.num}</span>
-                    <div className="card-titles">
-                      <h3>{item.name}</h3>
-                      <p>{item.desc}</p>
-                    </div>
-                  </div>
-                  <span className={`status-badge ${item.status === 'Live' ? 'status-live' : 'status-soon'}`}>
-                    {item.status === 'Live' && <span className="status-live-dot"></span>}
-                    {item.status}
-                  </span>
-                </div>
-                <div className="card-image-wrap">
-                  <img src={item.image} alt={`${item.name} platform`} loading="lazy" />
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PlatformsSection />
 
       <section className="stats container">
         <div className="stats-copy">
